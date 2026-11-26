@@ -1,0 +1,13 @@
+#!/usr/bin/python3
+
+import sys
+
+if len(sys.argv) != 2:
+    print("Usage: findline WORD", file=sys.stderr)
+    sys.exit(1)
+
+word = sys.argv[1]
+
+for lineno, line in enumerate(sys.stdin, start=1):
+    if word in line:
+        print(lineno)
